@@ -51,6 +51,7 @@ for (let i = 0; i < numOfBtn; i++) {
                 console.log(buttonInnerHtml);
         }
         }
+        function buttonAnimation(){}
         
         //Done by IF-ELSE Statement
         // for(let i = 0; i<numOfBtn; i++){
