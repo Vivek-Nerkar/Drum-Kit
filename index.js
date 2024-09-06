@@ -9,12 +9,14 @@ for (let i = 0; i < numOfBtn; i++) {
 
            let buttonInnerHtml = this.innerHTML; // Or use another property that identifies the button
            makeSound(buttonInnerHtml);
+           buttonAnimation(buttonInnerHtml);
            
            });
         }
         //detecting keypress
         document.addEventListener("keypress", function(event){
           makeSound(event.key);
+          buttonAnimation(event.key);
         });
         
         function makeSound(key){
@@ -51,7 +53,14 @@ for (let i = 0; i < numOfBtn; i++) {
                 console.log(buttonInnerHtml);
         }
         }
-        function buttonAnimation(){}
+        function buttonAnimation(currentKey){
+            let activeButton = document.querySelector("."+ currentKey);
+            activeButton.classList.add("pressed");
+            setTimeout(function(){
+                activeButton.classList.remove("pressed");
+            }, 100);
+
+        }
         
         //Done by IF-ELSE Statement
         // for(let i = 0; i<numOfBtn; i++){
